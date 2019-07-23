@@ -6,5 +6,4 @@ jobs:
     steps:
       - checkout
       - run: gradle clean
-      - run: gradle fatJar
-	
+      - run: gradle fatJar	
