@@ -21,3 +21,10 @@ jobs:
       - image: busybox
     steps:
       - run: echo "Application has been deployed"
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
+    - hold
+    - deploy
