@@ -10,9 +10,12 @@ jobs:
   hold:
     type: approval
     requires: build
+    steps:
+      - run: echo "Received Approval for deployment"
   deploy:
     requires:
       - hold
     docker:
       - image: gradle
+    steps:
       - run: echo "Application has been deployed"
