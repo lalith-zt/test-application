@@ -10,12 +10,14 @@ jobs:
   hold:
     type: approval
     requires: build
+    docker:
+      - image: busybox
     steps:
       - run: echo "Received Approval for deployment"
   deploy:
     requires:
       - hold
     docker:
-      - image: gradle
+      - image: busybox
     steps:
       - run: echo "Application has been deployed"
