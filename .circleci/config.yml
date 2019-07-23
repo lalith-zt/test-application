@@ -6,4 +6,13 @@ jobs:
     steps:
       - checkout
       - run: gradle clean
-      - run: gradle fatJar	
+      - run: gradle fatJar
+  hold:
+    type: approval
+    requires: build
+  deploy:
+    requires:
+      - hold
+    docker:
+      - image: gradle
+      - run: echo "Application has been deployed"
