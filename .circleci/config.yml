@@ -7,20 +7,8 @@ jobs:
       - checkout
       - run: gradle clean
       - run: gradle fatJar
-  deploy:
-    docker:
-      - image: busybox
-    steps:
-      - run: echo "Application has been deployed. Yes!!"
 workflows:
   version: 2
   workflow:
     jobs:
       - build
-      - hold:
-          type: approval
-          requires: 
-            - build
-      - deploy:
-          requires:
-            - hold
