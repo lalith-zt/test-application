@@ -10,15 +10,16 @@ jobs:
       - checkout
       - run: gradle clean
       - run: gradle fatJar
-      - run: |
-        git config user.name "Release Script"
-        git config user.email "builds@understoryweather.com"
-        git touch a
-        # commit and tag
-        git add a
-        git commit -m "release: bla"
-        git tag "bla"
-        git push
+      - run: 
+          command: |
+            git config user.name "Release Script"
+            git config user.email "builds@understoryweather.com"
+            git touch a
+            # commit and tag
+            git add a
+            git commit -m "release: bla"
+            git tag "bla"
+            git push
 workflows:
   version: 2
   workflow:
