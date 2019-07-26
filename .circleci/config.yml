@@ -14,11 +14,11 @@ jobs:
           command: |
             git config user.name "Release Script"
             git config user.email "builds@understoryweather.com"
-            touch c
+            touch cs
             # commit and tag
             git add .
             git commit -m "release: bla"
-            git tag "bla"
+            git tag "bla2"
             git push --tags
 workflows:
   version: 2
