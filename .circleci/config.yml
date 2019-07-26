@@ -14,7 +14,7 @@ jobs:
           command: |
             git config user.name "Release Script"
             git config user.email "builds@understoryweather.com"
-            git touch a
+            touch a
             # commit and tag
             git add a
             git commit -m "release: bla"
